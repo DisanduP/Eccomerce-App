@@ -1,0 +1,29 @@
+{
+    "$schema": "https://json.schemastore.org/staticwebapp.config.json",
+    "routes": [
+        {
+            "route": "/api/*",
+            "allowedRoles": ["anonymous"]
+        },
+        {
+            "route": "/*",
+            "rewrite": "/index.html",
+            "statusCode": 200
+        }
+    ],
+    "navigationFallback": {
+        "rewrite": "/index.html",
+        "exclude": ["/api/*", "/static/*"]
+    },
+    "responseOverrides": {
+        "404": {
+            "rewrite": "/index.html"
+        }
+    },
+    "globalHeaders": {
+        "Cache-Control": "no-cache"
+    },
+    "mimeTypes": {
+        ".json": "application/json"
+    }
+}
