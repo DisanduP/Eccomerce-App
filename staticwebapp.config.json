@@ -3,7 +3,9 @@
     "routes": [
         {
             "route": "/api/*",
-            "allowedRoles": ["anonymous"]
+            "allowedRoles": [
+                "anonymous"
+            ]
         },
         {
             "route": "/*",
@@ -13,7 +15,10 @@
     ],
     "navigationFallback": {
         "rewrite": "/index.html",
-        "exclude": ["/api/*", "/static/*"]
+        "exclude": [
+            "/api/*",
+            "/static/*"
+        ]
     },
     "responseOverrides": {
         "404": {
